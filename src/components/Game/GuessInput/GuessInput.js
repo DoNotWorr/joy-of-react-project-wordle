@@ -1,17 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useGuessState} from "../../../hooks/useGuessState";
 
-const useGuessState = (initialState) => {
-    const [guess, setState] = useState(initialState)
-    const setGuess = (input) => {
-        const guess = input.toUpperCase()
-        setState(guess)
-    }
-    const restoreGuess = () => setState(initialState)
-    return [guess, setGuess, restoreGuess]
-}
 function GuessInput() {
-    const initialState = ''
-    const [guess, setGuess, restoreGuess] = useGuessState(initialState)
+    const [guess, setGuess, restoreGuess] = useGuessState()
 
     function handleChange(event) {
         event.preventDefault()
