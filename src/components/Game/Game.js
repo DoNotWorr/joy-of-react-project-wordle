@@ -12,11 +12,11 @@ const answer = sample(WORDS);
 console.info({answer});
 
 function Game() {
-    const [guesses, setGuesses] = useGuessListState()
+    const [guesses, addGuess] = useGuessListState()
     return (
         <>
             <GuessList guesses={guesses}/>
-            <GuessInput/>
+            <GuessInput addGuess={addGuess}/>
         </>
     );
 }

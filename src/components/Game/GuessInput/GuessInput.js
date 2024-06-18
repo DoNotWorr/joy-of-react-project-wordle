@@ -1,7 +1,7 @@
 import React from 'react';
 import {useGuessState} from "../../../hooks/useGuessState";
 
-function GuessInput() {
+function GuessInput({addGuess}) {
     const [guess, setGuess, restoreGuess] = useGuessState()
 
     function handleChange(event) {
@@ -11,7 +11,7 @@ function GuessInput() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log({guess})
+        addGuess(guess)
         restoreGuess()
     }
 
